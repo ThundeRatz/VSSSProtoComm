@@ -13,9 +13,13 @@ def main():
             print(json.dumps(referee_data, indent=4))
 
             # Acess test
-            print(f"\r\nEstado do jogo: {referee_data['foul']}\r\n")
-            print(f"\r\nTempo do jogo: {referee_data['gameHalf']}\r\n")
-            print(f"\r\nTime: {referee_data['teamcolor']}\r\n")
+            # print if referee_data dict not empty
+            if referee_data:
+                print(f"\r\nEstado do jogo: {referee_data['foul']}\r\n")
+                print(f"\r\nTempo do jogo: {referee_data['gameHalf']}\r\n")
+                print(f"\r\nTime: {referee_data['teamcolor']}\r\n")
+            else:
+                print("\r\nNo data received\r\n")
     except KeyboardInterrupt:
         logging.info("Ending")
 
